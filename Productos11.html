@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Dunk Low</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato11.webp" alt="">
+            <div class="info-producto">
+                <h1>Nike Dunk Low</h1>
+                <p>149.99 €</p>
+                <p>El icono de los 80 vuelve con detalles clásicos y un estilo de baloncesto retro. La zona del tobillo
+                    acolchada lleva el estilo vintage a las calles y te permite jugar con comodidad en cualquier parte.
+                </p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5158c84e-ea67-4d9e-a52e-7566458366c6/dunk-low-zapatillas-n2484K.png"
+                alt="">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/43f8bde0-f642-4c51-a8a1-2a199edd1a4e/dunk-low-zapatillas-n2484K.png"
+                alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('producto-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const producto = {
+                    nombre: 'Nike Dunk Low',
+                    precio: 149.99,
+                    talla: document.getElementById('talla').value
+                };
+
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                carrito.push(producto);
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                alert('Producto añadido al carrito.');
+            });
+        });
+    </script>
+</body>
+
+</html>

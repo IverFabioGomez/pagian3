@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 1 Mid SE</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato8.webp" alt="Air Jordan 1 Mid SE">
+            <div class="info-producto">
+                <h1>Air Jordan 1 Mid SE</h1>
+                <p>771,02 €</p>
+                <p>Sabes que es impecable, llamativo y vanguardista, pero ¿cómo vas a combinar este AJ1? Está
+                    confeccionado de cuero y tela en la parte superior y tiene esa comodidad de la amortiguación Nike
+                    Air en la suela. Entonces, ¿qué va a ser?</p>
+                <ul>
+                    <li>Logotipo Wings estampado en el cuello</li>
+                    <li>Logotipo Swoosh cosido</li>
+                    <li>Diseño Jumpman Air en la lengüeta</li>
+                </ul>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://nikeco.vtexassets.com/arquivos/ids/521657-800-auto?v=638442160128630000&width=800&height=auto&aspect=true"
+                alt="Vista lateral de Air Jordan 1 Mid SE">
+            <img src="https://nikeco.vtexassets.com/arquivos/ids/531033-800-auto?v=638442175419070000&width=800&height=auto&aspect=true"
+                alt="Vista trasera de Air Jordan 1 Mid SE">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const producto = {
+                nombre: 'Air Jordan 1 Mid SE',
+                precio: 771.02,
+                talla: document.getElementById('talla').value
+            };
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            alert('Producto añadido al carrito.');
+        });
+    </script>
+</body>
+
+</html>

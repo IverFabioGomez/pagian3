@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 1 Mid SE</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b0ef9d2b-2164-4749-9dbc-9f991c311dcb/air-jordan-1-mid-se-zapatillas-vK4jKk.png"
+                alt="Air Jordan 1 Mid SE">
+            <div class="info-producto">
+                <h1>Air Jordan 1 Mid SE </h1>
+                <p class="precio-original">149,99 €</p>
+                <p>100,99 €</p>
+                <p>Prepárate para atraer todas las miradas con las AJ1. Colores nuevos y texturas actualizadas
+                    actualizan este modelo intemporal sin perder el look clásico y el tacto familiar. Se trata de unas
+                    zapatillas básicas para el mundo actual que están confeccionadas con materiales premium, integran
+                    amortiguación Air cómoda y destacan con detalles sutiles.</p>
+                <ul>
+                    <li>Logotipo Wings en la zona del tobillo</li>
+                    <li>Logotipo Swoosh cosido</li>
+                    <li>Logotipo Jumpman en la lengüeta</li>
+                    <li>Color mostrado: Blanco/Sail/Industrial Blue</li>
+                    <li>Modelo: FN5215-141
+                    </li>
+                </ul>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/69f66f10-7cc7-4439-a82b-ba59cfe8e106/air-jordan-1-mid-se-zapatillas-vK4jKk.png"
+                alt="Air Jordan 1 Mid SE">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6d4c9304-2078-4f17-b5de-0282180af1e8/air-jordan-1-mid-se-zapatillas-vK4jKk.png"
+                alt="Air Jordan 1 Mid SE">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const producto = {
+                nombre: 'Air Jordan 1 Mid SE',
+                precio: 100.99,
+                talla: document.getElementById('talla').value
+            };
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            alert('Producto añadido al carrito.');
+        });
+    </script>
+
+</body>
+</html>

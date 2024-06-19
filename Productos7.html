@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 1 Mid</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato7.webp" alt="Zapatilla Air Jordan 1 Mid">
+            <div class="info-producto">
+                <h1>Air Jordan 1 Mid</h1>
+                <p>139,99 €</p>
+                <p>Inspirada en el AJ1 original, esta versión de caña media conserva el estilo icónico que te encanta.
+                    Los detalles negros en la parte superior blanca con cuero flexible dan al zapato una identidad
+                    inconfundible. La entresuela de espuma y la amortiguación Nike Air brindan comodidad liviana,
+                    mientras que la suela de goma con punto de pivote ofrece tracción duradera.</p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/852a384c-a6ef-45af-9bf7-2ed47d64ae4f/air-jordan-1-mid-zapatillas-FmWTpJ.png"
+                alt="Vista lateral de Air Jordan 1 Mid">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/288a2235-54ce-4f8e-a133-0117cbc381b4/air-jordan-1-mid-zapatillas-FmWTpJ.png"
+                alt="Vista trasera de Air Jordan 1 Mid">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Espera a que el DOM esté completamente cargado antes de ejecutar el script
+        document.addEventListener('DOMContentLoaded', function () {
+            // Agrega un event listener para el submit del formulario
+            document.getElementById('producto-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Previene la acción por defecto del formulario (submit)
+
+                // Crea un objeto producto con la información del producto seleccionado
+                const producto = {
+                    nombre: 'Air Jordan 1 Mid',
+                    precio: 139.99,
+                    talla: document.getElementById('talla').value
+                };
+
+                // Obtiene los productos del carrito desde localStorage o inicializa un array vacío si no hay productos
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                carrito.push(producto); // Agrega el producto actual al carrito
+                localStorage.setItem('carrito', JSON.stringify(carrito)); // Guarda el carrito actualizado en localStorage
+
+                alert('Producto añadido al carrito.'); // Alerta al usuario que el producto se añadió correctamente
+            });
+        });
+    </script>
+</body>
+
+</html>

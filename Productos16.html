@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumpman MVP - Tienda de Zapatillas</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato16.jpg" alt="">
+            <div class="info-producto">
+                <h1>Jumpman MVP</h1>
+                <p>169,99 €</p>
+                <p>No inventamos los remix, pero teniendo en cuenta el material con el que probamos, este modelo es
+                    ideal. Hemos tomado elementos de las AJ6, las 7 y las 8 para crear unas zapatillas completamente
+                    nuevas que rinden homenaje a los primeros tres campeonatos consecutivos de MJ. Con detalles de piel,
+                    tela y nobuck, estas zapatillas rinden homenaje a un legado y te animan a cementar tu propio estilo.
+                </p>
+                <ul>
+                    <li>Logotipo Jumpman bordado</li>
+                    <li>Color mostrado: Blanco/Neutral Grey/Industrial Blue</li>
+                </ul>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7b887396-1457-496f-a499-1c2b22466ac4/jumpman-mvp-zapatillas-XCzhGH.png"
+                alt="">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8a9c6c3e-4bc5-4909-9709-3911bc78a347/jumpman-mvp-zapatillas-XCzhGH.png"
+                alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Agregar evento al formulario
+            document.getElementById('producto-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevenir envío del formulario
+
+                // Crear objeto producto con los datos del formulario
+                const producto = {
+                    nombre: 'Jumpman MVP',
+                    precio: 169.99,
+                    talla: document.getElementById('talla').value
+                };
+
+                // Obtener el carrito del almacenamiento local
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+                // Agregar el producto al carrito
+                carrito.push(producto);
+
+                // Guardar el carrito actualizado en el almacenamiento local
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                // Mostrar mensaje de confirmación
+                alert('Producto añadido al carrito.');
+            });
+        });
+    </script>
+</body>
+
+</html>

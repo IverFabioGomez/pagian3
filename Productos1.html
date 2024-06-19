@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 1 Zoom CMFT 2</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9bc4b57b-acaa-4c48-bb0b-ba5a868c3038/air-jordan-1-zoom-cmft-2-zapatillas-5StvfS.png"
+                alt="Air Jordan 1 Zoom CMFT 2">
+            <div class="info-producto">
+                <h1>Air Jordan 1 Zoom CMFT 2</h1>
+                <p class="precio-original">169,99 €</p>
+                <p class="precio-descuento">130.99 €</p>
+                <p>El ante premium y la espuma exclusiva Formula 23 de la marca Jordan se unen para ofrecerte unas AJ1 premium y supercómodas. Ya no tendrás que elegir entre estilo o comodidad: este modelo te ofrece ambos, como te mereces.</p>
+                <ul>
+                    <li>Color mostrado: Sail/Burnt Sunrise/Sail/Terra Blush</li>
+                    <li>Modelo: DV1307-102</li>
+                    <li>Tecnología Nike Air para absorber los impactos y proporcionar amortiguación en cada pisada.</li>
+                    <li>Ante en la parte superior y la puntera para un look cómodo que se adapta a los pies.</li>
+                    <li>Espuma Jordan Formula 23 que aporta acolchado a los pies.</li>
+                </ul>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9a8c2ad7-3aa6-4d70-8e78-9dc3b4be0e89/air-jordan-1-zoom-cmft-2-zapatillas-5StvfS.png"
+                alt="Air Jordan 1 Zoom CMFT 2">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2fc2b281-a65d-4ef6-8adf-f1ed9adbadaa/air-jordan-1-zoom-cmft-2-zapatillas-5StvfS.png"
+                alt="Air Jordan 1 Zoom CMFT 2">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const producto = {
+                nombre: 'Air Jordan 1 Zoom CMFT 2',
+                precio: 130.99,
+                talla: document.getElementById('talla').value
+            };
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            alert('Producto añadido al carrito.');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 4 Oxidised Green</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/07c02a5f-7c2d-4603-a90c-599587752850/fecha-de-lanzamiento-de-las-air-jordan%C2%A04-oxidized-green-fq8138-103.jpg" alt=" Oxidised Green">
+            <div class="info-producto">
+                <h1>Air Jordan 4 Oxidised Green </h1>
+                <p class="precio-original">€209.99</p>
+                <p>150.99 €</p>
+                <p>Adéntrate en un clásico. El querido AJ4 regresa con un poco más de brillo. Su impecable parte superior de cuero blanco presenta detalles en verde oxidado, que aportan un brillo metálico a los ojales, la entresuela y la marca. Manteniéndose fiel a su forma, la amortiguación Nike Air en el talón y el antepié suaviza tu pisada. Los elementos de diseño originales, como ojales flotantes y paneles tipo malla, lo hacen sentir tan fresco como en el 89. </p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_prod_sc/w_640,c_limit,f_auto/9a6b7c60-8a9d-4cda-9aad-04e252e35a02/air-jordan-4-oxidised-green-fq8138-103-release-date.jpg" alt="">
+            <img src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/32090ca9-d8ef-4943-aa41-4f23dc0777af/air-jordan-4-oxidised-green-fq8138-103-release-date.jpg" alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const producto = {
+                nombre: 'Air Jordan 4 Oxidised Green',
+                precio: 150.99,
+                talla: document.getElementById('talla').value
+            };
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            alert('Producto añadido al carrito.');
+        });
+    </script>
+</body>
+
+</html>

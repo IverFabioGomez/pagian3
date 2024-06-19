@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        #inicio {
+            background-image: url(https://cdn.pixabay.com/photo/2017/08/22/00/31/shoes-2667450_1280.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        #inicio h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #inicio p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        #inicio a {
+            background-color: white;
+            color: black;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        #inicio a:hover {
+            background-color: #444;
+            color: white;
+        }
+
+        .promociones {
+            padding: 25px;
+            margin: 2rem auto;
+            text-align: center;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .promociones img {
+            width: 75%;
+            max-width: 580px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .promociones img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .img {
+            width: 150px;
+            height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="inicio">
+        <div>
+            <h1>Bienvenidos a Wolfnes</h1>
+            <p>Descubre las mejores zapatillas del mercado</p>
+            <a href="Productos.html">Ver Productos</a>
+        </div>
+    </div>
+    <div class="promociones">
+        <div>
+            <a href="Productos7.html"><img
+                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/288a2235-54ce-4f8e-a133-0117cbc381b4/air-jordan-1-mid-zapatillas-FmWTpJ.png"
+                    alt="Promoción 1"></a>
+        </div>
+        <div>
+            <a href="Productos2.html">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6d4c9304-2078-4f17-b5de-0282180af1e8/air-jordan-1-mid-se-zapatillas-vK4jKk.png"
+                    alt="">
+            </a>
+        </div>
+        <div>
+            <a href="Productos1.html">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2fc2b281-a65d-4ef6-8adf-f1ed9adbadaa/air-jordan-1-zoom-cmft-2-zapatillas-5StvfS.png"
+                    alt="Promoción 3">
+            </a>
+        </div>
+    </div>
+    <div class="promociones">
+        <div>
+            <a href="Productos7.html">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/739d1f29-df07-4c8c-b33f-dea08cd48bee/air-jordan-1-mid-zapatillas-FmWTpJ.png"
+                    alt="">
+            </a>
+        </div>
+        <div>
+            <a href="Productos2.html">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/482736e9-4c96-4f5b-ac61-1b6ba7650b87/air-jordan-1-mid-se-zapatillas-vK4jKk.png"
+                    alt="Promoción 1">
+            </a>
+        </div>
+        <div>
+            <a href="Productos1.html">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a107e916-d4f8-4b42-9c58-a37f7980261d/air-jordan-1-zoom-cmft-2-zapatillas-5StvfS.png"
+                    alt="">
+            </a>
+        </div>
+    </div>
+    <div class="promociones">
+        <div>
+            <a href="Productos7.html">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/be249cce-aa07-475e-926c-982a5c52d387/air-jordan-1-mid-zapatillas-FmWTpJ.png"
+                    alt="">
+            </a>
+        </div>
+        <div>
+            <a href="Productos2.html">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/573cbd79-4acb-49fa-a40d-6d91bc4d968d/air-jordan-1-mid-se-zapatillas-vK4jKk.png"
+                    alt="Promoción 1">
+            </a>
+        </div>
+        <div>
+            <a href="Productos1.html">
+                <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/42a83b49-96a0-4d88-a696-5dd085dce7dd/air-jordan-1-zoom-cmft-2-zapatillas-5StvfS.png"
+                    alt="">
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

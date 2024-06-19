@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Dunk Low SP</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato13.webp" alt="">
+            <div class="info-producto">
+                <h1>Nike Dunk Low SP</h1>
+                <p>85.990 €</p>
+                <p>Creado para la cancha de baloncesto pero llevado a las calles, el ícono del baloncesto de los años 80
+                    regresa con superposiciones perfectamente brillantes y combinaciones de colores inspiradas en
+                    universidades. Con su diseño clásico de baloncesto, el Nike Dunk High SP canaliza el estilo vintage
+                    de vuelta a las calles mientras que su cuello acolchado le da a tu look old school comodidad.</p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://nikeclprod.vtexassets.com/arquivos/ids/959311-1200-1200?v=638425079173800000&width=1200&height=1200&aspect=true" alt="">
+            <img src="https://nikeclprod.vtexassets.com/arquivos/ids/958950-1200-1200?v=638425069196770000&width=1200&height=1200&aspect=true" alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('producto-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const producto = {
+                    nombre: 'Nike Dunk Low SP',
+                    precio: 85990,
+                    talla: document.getElementById('talla').value
+                };
+
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                carrito.push(producto);
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                alert('Producto añadido al carrito.');
+            });
+        });
+    </script>
+</body>
+
+</html>

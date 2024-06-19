@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatum 2 "Legacy"</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato18.webp" alt="">
+            <div class="info-producto">
+                <h1>Tatum 2 "Legacy"</h1>
+                <p>129,99 €</p>
+                <p>Ya conoces la leyenda de la marca Jordan y la historia de Boston. Jayson Tatum transporta ambos
+                    legados hacia el futuro con esta edición de las Tatum 2, que combinan el icónico diseño "White
+                    Cement" con llamativos toques de color que rinden homenaje a su equipo. ¿Cuál va a ser tu legado?
+                    Adéntrate en las Tatum 2 ligeras y flexibles y adáptalas a tu estilo.</p>
+                <p>Gran agarre <br>
+                    En la cancha siempre estás en movimiento. Ahí entra en juego la suela exterior de goma y la espuma en contacto con el suelo para aportar reactividad y tracción en ataque y defensa.
+                </p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Agregar evento al formulario
+            document.getElementById('producto-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevenir envío del formulario
+
+                // Crear objeto producto con los datos del formulario
+                const producto = {
+                    nombre: 'Tatum 2 "Legacy"',
+                    precio: 129.99,
+                    talla: document.getElementById('talla').value
+                };
+
+                // Obtener el carrito del almacenamiento local
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+                // Agregar el producto al carrito
+                carrito.push(producto);
+
+                // Guardar el carrito actualizado en el almacenamiento local
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                // Mostrar mensaje de confirmación
+                alert('Producto añadido al carrito.');
+            });
+        });
+    </script>
+</body>
+
+</html>

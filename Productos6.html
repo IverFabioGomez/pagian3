@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 1 Retro High OG</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato6.webp" alt="Zapatilla ">
+            <div class="info-producto">
+                <h1>Air Jordan 1 Retro High OG </h1>
+                <p>2.572,03 € </p>
+                <p>Las Air Jordan 1 Retro High OG reinventan el calzado clásico, ofreciendo un nuevo aspecto con una
+                    sensación familiar. Con materiales premium, nuevos colores y texturas, este icónico zapato añade un
+                    toque moderno al favorito de siempre.</p>
+                <ul>
+                    <li>El cuero ofrece durabilidad y estructura.</li>
+                    <li>Las unidades Air-Sole encapsuladas proporcionan amortiguación ligera.</li>
+                    <li>Una suela de goma sólida te brinda tracción en distintos tipos de superficies.</li>
+                    <li>Logotipo Wings estampado en el cuello.</li>
+                    <li>Logotipo Swoosh cosido.</li>
+                    <li>Tracción de goma.</li>
+                    <li>Suela de espuma.</li>
+                </ul>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://media.marathon.store/products/h1a/h9b/h00/10272325402654.jpg" alt="">
+            <img src="https://media.marathon.store/products/h2d/hda/h00/10272323043358.jpg" alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const producto = {
+                nombre: 'Air Jordan 1 Retro High OG',
+                precio: 2572.03,
+                talla: document.getElementById('talla').value
+            };
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            alert('Producto añadido al carrito.');
+        });
+    </script>
+</body>
+
+</html>

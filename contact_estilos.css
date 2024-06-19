@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.logo {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.contacto {
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.formulario-contacto, .info-tienda {
+    flex: 1 1 300px;
+    max-width: 500px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.formulario-contacto h3, .info-tienda h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formulario-contacto label {
+    text-align: left;
+    margin-bottom: 0.25rem;
+}
+
+.formulario-contacto input, .formulario-contacto textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulario-contacto button {
+    padding: 0.75rem;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.formulario-contacto button:hover {
+    background-color: black;
+}
+
+.info-tienda p {
+    text-align: left;
+}
+
+.mapa {
+    margin-bottom: 2rem;
+}
+
+.mapa h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.img{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+

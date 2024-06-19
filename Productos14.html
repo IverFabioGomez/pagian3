@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 1 Mid SE</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato14.jfif" alt="">
+            <div class="info-producto">
+                <h1>Air Jordan 1 Mid SE</h1>
+                <p>135.00 €</p>
+                <p>¿Listo para llamar la atención? Ponte los AJ1. Los colores nuevos y las texturas frescas actualizan
+                    estos favoritos de todos los tiempos sin perder su aspecto clásico y su sensación familiar.
+                    Confeccionados con materiales premium, una cómoda amortiguación Air y detalles sutiles, son unos
+                    tenis básicos para el mundo actual.</p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/494bb23f-3b49-4677-ac52-7b8cffad4c11/jordan-6-rings-zapatillas-NS0H0b.png"
+                alt="">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/818d56c0-c089-427c-a490-4ffff91398d7/jordan-6-rings-zapatillas-NS0H0b.png"
+                alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('producto-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const producto = {
+                    nombre: 'Air Jordan 1 Mid SE',
+                    precio: 135.00,
+                    talla: document.getElementById('talla').value
+                };
+
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                carrito.push(producto);
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                alert('Producto añadido al carrito.');
+            });
+        });
+    </script>
+</body>
+
+</html>

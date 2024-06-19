@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar - Tienda de Zapatillas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        .pago {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-pago {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .resumen-compra,
+        .formulario-pago {
+            flex: 1;
+        }
+
+        .resumen-compra ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .resumen-compra ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .resumen-compra ul li:last-child {
+            border-bottom: none;
+        }
+
+        .formulario-pago form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .formulario-pago form label {
+            margin: 1rem 0 0.5rem;
+        }
+
+        .formulario-pago form input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .formulario-pago form button {
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .formulario-pago form button:hover {
+            background-color: #444;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .img {
+            width: 150px;
+            height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pago">
+            <h2>Pagar</h2>
+            <div class="info-pago">
+                <div class="resumen-compra">
+                    <h3>Resumen de la Compra</h3>
+                    <ul id="lista-productos">
+                        <!-- Productos del carrito se cargarán aquí -->
+                    </ul>
+                </div>
+
+                <div class="formulario-pago">
+                    <h3>Detalles de Pago</h3>
+                    <form id="form-pago">
+                        <label for="nombre">Nombre en la tarjeta:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="tarjeta">Número de la tarjeta:</label>
+                        <input type="text" id="tarjeta" name="tarjeta" required>
+
+                        <label for="expiracion">Fecha de expiración:</label>
+                        <input type="text" id="expiracion" name="expiracion" placeholder="MM/AA" required>
+
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" required>
+
+                        <button type="submit">Pagar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const listaProductos = document.getElementById('lista-productos');
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            let total = 0;
+
+            carrito.forEach(producto => {
+                const li = document.createElement('li');
+                li.textContent = `${producto.nombre} - ${producto.precio} € (Talla: ${producto.talla})`;
+                listaProductos.appendChild(li);
+                total += producto.precio;
+            });
+
+            const totalLi = document.createElement('li');
+            totalLi.innerHTML = `<strong>Total: ${total.toFixed(2)} €</strong>`;
+            listaProductos.appendChild(totalLi);
+
+            document.getElementById('form-pago').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const nombre = document.getElementById('nombre').value;
+                const tarjeta = document.getElementById('tarjeta').value;
+                const expiracion = document.getElementById('expiracion').value;
+                const cvv = document.getElementById('cvv').value;
+
+                if (!nombre || !tarjeta || !expiracion || !cvv) {
+                    alert('Por favor, complete todos los campos.');
+                    return;
+                }
+
+                if (tarjeta.length !== 16) {
+                    alert('El número de la tarjeta debe tener 16 dígitos.');
+                    return;
+                }
+
+                if (expiracion.length !== 5 || !/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiracion)) {
+                    alert('La fecha de expiración debe estar en formato MM/AA.');
+                    return;
+                }
+
+                if (cvv.length !== 3) {
+                    alert('El CVV debe tener 3 dígitos.');
+                    return;
+                }
+
+                const tarjetaValida = tarjetasValidas.find(t => t.nombre === nombre && t.tarjeta === tarjeta && t.expiracion === expiracion.replace('/', '') && t.cvv === cvv);
+
+                if (!tarjetaValida) {
+                    alert('Esta tarjeta no está habilitada para compras.');
+                    return;
+                }
+
+                alert('Pago procesado exitosamente.');
+                localStorage.removeItem('carrito');
+                listaProductos.innerHTML = '';
+                total = 0;
+                totalLi.innerHTML = `<strong>Total: ${total.toFixed(2)} €</strong>`;
+                listaProductos.appendChild(totalLi);
+            });
+        });
+
+        const tarjetasValidas = [
+            { nombre: 'Yair Anibal Mamani Ticona', tarjeta: '8236300519090822', expiracion: '0312', cvv: '343' },
+            { nombre: 'Rebeca Daniela Alvarez Nina', tarjeta: '0908223005198236', expiracion: '2611', cvv: '616' }
+        ];
+    </script>
+</body>
+
+</html>

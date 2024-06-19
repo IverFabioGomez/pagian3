@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumpman Two Trey 'USA' GS</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato4.webp" alt="Zapatilla 1">
+            <div class="info-producto">
+                <h1>Jumpman Dos Trey 'USA' GS</h1>
+                <p class="precio-original">150.00 €</p>
+                <p>100.00 €</p>
+                <p>Vuela alto con zapatillas creadas para honrar el tiempo de MJ en Chicago. El cuero de alta calidad y
+                    la clásica amortiguación Air se combinan para brindar una apariencia y sensación premium. ¿A quién
+                    representas? Dos Trey, cariño. </p>
+
+                <p>La tecnología Nike Air absorbe el impacto para brindar amortiguación en cada paso.
+                    El cuero genuino ofrece soporte duradero con una apariencia premium.
+                    La suela de goma brinda tracción duradera donde la necesitas.</p>
+                <ul>
+                    <li>Cuello acolchado con forro de tela.</li>
+                    <li>Entresuela de espuma</li>
+                    <li>Suela de goma con tracción en espiga en el antepié</li>
+                </ul>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://takoutny.com/cdn/shop/products/DQ8431-102-PHCTH001-1000_ff7c82b7-44f1-489f-ac9c-2d2604f70739.png?v=1673637849&width=600" alt="">
+            <img src="https://takoutny.com/cdn/shop/products/DQ8431-102-PHSLH000-1000_719f8298-72d0-4ee9-88b7-8e8a31b00199.png?v=1673637849&width=600" alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const producto = {
+                nombre: 'Jumpman Two Trey "USA" GS',
+                precio: 100.00,
+                talla: document.getElementById('talla').value
+            };
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            alert('Producto añadido al carrito.');
+        });
+    </script>
+</body>
+
+</html>

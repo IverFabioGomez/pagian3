@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 1 High OG Mauve</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato5.webp" alt="Zapatilla 5">
+            <div class="info-producto">
+                <h1>Air Jordan 1 High OG Mauve</h1>
+                <p class="precio-original">21109,00 €</p>
+                <p>10554,00 €</p>
+                <p>El Air Jordan 1 High OG revive el clásico, brinda un look icónico con una sensación familiar. Los
+                    revestimientos de cuero malva ofrecen un contraste suave con la parte superior neutra que crea un
+                    acabado impecable ideal para la temporada. Como el MJ exclusivo e innovador de básquetbol, esta
+                    expresión moderna de un favorito de todos los tiempos es simplemente perfecta.
+                </p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_prod_sc/w_640,c_limit,f_auto/94bcac7e-e7e4-47b4-968a-98a9d3f2615c/fecha-de-lanzamiento-del-air-jordan-1-high-og-mauve-dz5485-105.jpg"
+                alt="">
+            <img src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/c61d125f-e376-4341-bb46-9d7bfe4ccc63/fecha-de-lanzamiento-del-air-jordan-1-high-og-mauve-dz5485-105.jpg"
+                alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const producto = {
+                nombre: 'Air Jordan 1 High OG Mauve',
+                precio: 10554.00,
+                talla: document.getElementById('talla').value
+            };
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            alert('Producto añadido al carrito.');
+        });
+    </script>
+</body>
+
+</html>

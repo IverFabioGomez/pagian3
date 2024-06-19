@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeBron Witness 8</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato9.webp" alt="LeBron Witness 8">
+            <div class="info-producto">
+                <h1>LeBron Witness 8</h1>
+                <p>119,99 €</p>
+                <p>Una vez en la cancha, ¿qué tipo de espectáculo quieres ofrecer? Acapara todas las miradas con las
+                    LeBron Witness 8 y hazles saber que tu talento y tus habilidades no tienen límites. Estas zapatillas
+                    elegantemente esculpidas ofrecen estabilidad en las pisadas explosivas y suavidad en los aterrizajes
+                    para que campeones como tú y LeBron podáis saltar, frenar y avanzar sin problemas de un extremo a
+                    otro de la cancha.</p>
+                <ul>
+                    <li>Zona del tobillo acolchada</li>
+                    <li>Lengüeta acolchada cosida con patrón de diamante</li>
+                    <li>Color mostrado: Field Purple/Dusty Cactus/Light Lemon Twist/Blanco</li>
+                    <li>Modelo: FB2239-500</li>
+                </ul>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/82398c67-769f-4bb2-944d-aa9f0d26df0f/lebron-witness-8-zapatillas-de-baloncesto-CjqL19.png" alt="Vista lateral de LeBron Witness 8">
+            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2333ab5d-113b-4ade-88df-35453dcea6a9/lebron-witness-8-zapatillas-de-baloncesto-CjqL19.png" alt="Vista trasera de LeBron Witness 8">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const producto = {
+                nombre: 'LeBron Witness 8',
+                precio: 119.99,
+                talla: document.getElementById('talla').value
+            };
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            alert('Producto añadido al carrito.');
+        });
+    </script>
+</body>
+
+</html>

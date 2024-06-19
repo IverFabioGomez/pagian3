@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="reg_estilos.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Inicia Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <h2>Registrate</h2>
+            <form id="registerForm">
+                <div>
+                    <div class="seccion">
+                        <div>Datos Personales</div>
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" required maxlength="30" minlength="3">
+                            <span id="errorNombre" style="color: red; display: none;">El nombre es requerido (mínimo 3 caracteres).</span>
+                        </div>
+                        <div>
+                            <label for="contrasena">Contraseña:</label>
+                            <input type="password" id="contrasena" required minlength="6">
+                            <span id="errorContrasena" style="color: red; display: none;">La contraseña es requerida (mínimo 6 caracteres).</span>
+                        </div>
+                        <div class="campo">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" required maxlength="30" minlength="3">
+                            <span id="errorApellido" style="color: red; display: none;">El apellido es requerido (mínimo 3 caracteres).</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>Dirección</div>
+                        <div>
+                            <label for="calle">Calle:</label>
+                            <input type="text" id="calle">
+                        </div>
+                        <div>
+                            <label for="ciudad">Ciudad:</label>
+                            <input type="text" id="ciudad" required minlength="1" maxlength="30">
+                            <span id="errorCiudad" style="color: red; display: none;">La ciudad es requerida.</span>
+                        </div>
+                        <div>
+                            <label for="codigo-postal">Código Postal:</label>
+                            <input type="text" id="codigo-postal" required minlength="5" maxlength="5" placeholder="00000">
+                            <span id="errorCodigoPostal" style="color: red; display: none;">El código postal es requerido (5 dígitos).</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>Datos de Contacto</div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" placeholder="example@example.com" required>
+                            <span id="errorEmail" style="color: red; display: none;">El email es requerido y debe tener un formato válido.</span>
+                        </div>
+                        <div>
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" minlength="6" maxlength="8" required>
+                            <span id="errorTelefono" style="color: red; display: none;">El teléfono es requerido (mínimo 6 y máximo 8 dígitos).</span>
+                        </div>
+                        <div>
+                            <label for="comentarios">Comentarios:</label>
+                            <textarea id="comentarios"></textarea>
+                        </div>
+                        <button type="submit">Registrate</button>
+                        <div id="registroExitoso" style="color: green; display: none;">¡Registro exitoso!</div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            event.preventDefault(); 
+            
+            var nombre = document.getElementById("nombre").value;
+            var contrasena = document.getElementById("contrasena").value;
+            var apellido = document.getElementById("apellido").value;
+            var ciudad = document.getElementById("ciudad").value;
+            var codigoPostal = document.getElementById("codigo-postal").value;
+            var email = document.getElementById("email").value;
+            var telefono = document.getElementById("telefono").value;
+
+            var valid = true;
+
+            if (nombre.length < 3) {
+                document.getElementById("errorNombre").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("errorNombre").style.display = "none";
+            }
+
+            if (contrasena.length < 6) {
+                document.getElementById("errorContrasena").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("errorContrasena").style.display = "none";
+            }
+
+            if (apellido.length < 3) {
+                document.getElementById("errorApellido").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("errorApellido").style.display = "none";
+            }
+
+            if (ciudad.length < 1) {
+                document.getElementById("errorCiudad").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("errorCiudad").style.display = "none";
+            }
+
+            if (codigoPostal.length !== 5) {
+                document.getElementById("errorCodigoPostal").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("errorCodigoPostal").style.display = "none";
+            }
+
+            if (!email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
+                document.getElementById("errorEmail").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("errorEmail").style.display = "none";
+            }
+
+            if (telefono.length < 6 || telefono.length > 8) {
+                document.getElementById("errorTelefono").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("errorTelefono").style.display = "none";
+            }
+
+            if (valid) {
+                var usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+                usuarios.push({ email: email, password: contrasena });
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                
+                document.getElementById("registroExitoso").style.display = "block";  
+                setTimeout(function () {
+                    window.location.href = "Login.html"; 
+                }, 2000); 
+            }
+        });
+    </script>
+
+</body>
+
+</html>

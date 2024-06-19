@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeBron NXXT Gen AMPD</title>
+    <link rel="stylesheet" href="css.css">
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('producto-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                
+                const producto = {
+                    nombre: 'LeBron NXXT Gen AMPD',
+                    precio: 169.99,
+                    talla: document.getElementById('talla').value
+                };
+
+                
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                carrito.push(producto);
+                localStorage.setItem('carrito', JSON.stringify(carrito)); 
+
+                
+                alert('Producto añadido al carrito.');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato10.webp" alt="LeBron NXXT Gen AMPD">
+            <div class="info-producto">
+                <h1>LeBron NXXT Gen AMPD</h1>
+                <p>169,99 €</p>
+                <p>Da igual eres un saltador campeón de los mates o lo tuyo es más moverte por la línea de fondo, ve más
+                    rápido y siéntete más cerca de la pista y con mayor confianza con las LeBron NXXT. Se han diseñado
+                    específicamente para satisfacer las exigencias del juego frenético de hoy en día y que puedas
+                    adelantarte a los oponentes con velocidad y fuerza en cualquier dirección.</p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img
+                src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5b9a482b-1100-459c-b7e9-8896b4d6262f/lebron-nxxt-gen-ampd-zapatillas-de-baloncesto-1VXGN2.png"
+                alt="Vista lateral de LeBron NXXT Gen AMPD">
+            <img
+                src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f8fb6e29-c56a-4273-84bc-b693029d5ca7/lebron-nxxt-gen-ampd-zapatillas-de-baloncesto-1VXGN2.png"
+                alt="Vista trasera de LeBron NXXT Gen AMPD">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

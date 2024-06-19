@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan 1 Retro High OG</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-producto">
+            <img src="imgProyecto/zapato12.webp" alt="">
+            <div class="info-producto">
+                <h1>Air Jordan 1 Retro High OG</h1>
+                <p>272,66 €</p>
+                <p>El Air Jordan 1 Retro High rehace el calzado clásico y te brinda una apariencia nueva con una
+                    sensación familiar. Los materiales de primera calidad con nuevos colores y texturas dan una
+                    expresión moderna a un favorito de todos los tiempos.</p>
+                <form id="producto-form">
+                    <label for="talla">Talla:</label>
+                    <select id="talla" name="talla">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                    <button type="submit">Añadir al Carrito</button>
+                </form>
+            </div>
+            <img src="https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw88c1aad2/nk/e4c/3/5/1/5/1/e4c35151_2c76_41e1_989a_e33a24b67b80.png?sw=700&sh=700&sm=fit&q=100&strip=false"
+                alt="">
+            <img src="https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwe2c860ae/nk/6ad/7/8/a/9/f/6ad78a9f_14a9_4590_8e7c_9392d0523678.png?sw=700&sh=700&sm=fit&q=100&strip=false"
+                alt="">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas Wolfnes. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('producto-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const producto = {
+                    nombre: 'Air Jordan 1 Retro High OG',
+                    precio: 272.66,
+                    talla: document.getElementById('talla').value
+                };
+
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                carrito.push(producto);
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                alert('Producto añadido al carrito.');
+            });
+        });
+    </script>
+</body>
+
+</html>

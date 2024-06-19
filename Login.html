@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="login_estilos.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="img" src="imagenHeader/image.png" alt="">
+            </div>
+            <ul>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li>
+                    <a href="Pagar - Tienda de zapatillas.html">
+                        <img src="imagenHeader/carrito.png" alt="carrito"
+                            style="width: 25px; height: 25px; vertical-align: middle; margin-right: 15px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Iniciar Sesión</button>
+                <br>
+                <br>
+                <a href="registro.html">Registrarse</a>
+                <br>
+                <br>
+                <a href="#">¿Olvidó su contraseña?</a>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+        // Función para obtener usuarios almacenados en localStorage
+        function obtenerUsuariosRegistrados() {
+            return JSON.parse(localStorage.getItem('usuarios')) || [];
+        }
+
+        // Función para manejar el envío del formulario de inicio de sesión
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var usuarios = obtenerUsuariosRegistrados();
+
+            // Buscar si el usuario existe en el array de usuarios
+            var usuario = usuarios.find(function (user) {
+                return user.email === email && user.password === password;
+            });
+
+            if (usuario) {
+                // Redirigir a la página de inicio si las credenciales son válidas
+                window.location.href = 'Inicio.html';
+            } else {
+                // Mostrar alerta si las credenciales no son válidas
+                alert('Email o contraseña incorrectos.');
+            }
+        });
+    </script>
+</body>
+
+</html>
